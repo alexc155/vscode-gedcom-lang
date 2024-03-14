@@ -1,0 +1,76 @@
+{
+  "name": "vscode-gedcom-lang",
+  "displayName": "GEDCOM Language",
+  "description": "GEDCOM file language support for VS Code",
+  "version": "0.0.1",
+  "publisher": "alexc155",
+  "license": "MIT",
+  "author": {
+    "name": "Alex Clark",
+    "url": "https://github.com/alexc155"
+  },
+  "keywords": [
+    "gedcom",
+    "ged",
+    "genealogy"
+  ],
+  "homepage": "https://github.com/alexc155/vscode-gedcom-lang/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexc155/vscode-gedcom-lang"
+  },
+  "bugs": {
+    "url": "https://github.com/alexc155/vscode-gedcom-lang/issues"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other",
+    "Formatters"
+  ],
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#3a3d41",
+    "theme": "dark"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint \"src/**/*.ts\"",
+    "watch": "tsc -watch -p ./"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "gedcom",
+        "aliases": [
+          "GEDCOM",
+          "gedcom"
+        ],
+        "extensions": [
+          ".ged",
+          ".gedcom"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gedcom",
+        "scopeName": "source.gedcom",
+        "path": "./syntaxes/gedcom.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.27",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.2"
+  }
+}
